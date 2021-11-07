@@ -3,6 +3,7 @@ from flask_cors import CORS
 import numpy as np
 from sympy import *
 import math
+import os
 
 
 app = Flask(__name__)
@@ -107,7 +108,6 @@ def simpson13_multiple():
     a = request.json['a']
     b = request.json['b']
     f = request.json['funcion']
-    print(f)
     n = request.json['n']
     if n % 2 != 0:
         raise Exception("N par")
@@ -168,4 +168,5 @@ def simpson13_multiple_list():
     return jsonify({'res': I})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
