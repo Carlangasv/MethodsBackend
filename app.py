@@ -14,7 +14,9 @@ y = Symbol('y')
 y1 = Symbol('y1')
 y2 = Symbol('y2')
 fun = vars(math)
-
+@app.route('/')
+def index():
+    return '<h1>Bienvenido</h1>'
 
 @app.route('/cuarto_orden', methods=['POST'])
 def cuarto_orden():
