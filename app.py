@@ -3,7 +3,6 @@ from flask_cors import CORS
 import numpy as np
 from sympy import *
 import math
-import os
 
 
 app = Flask(__name__)
@@ -14,6 +13,7 @@ y = Symbol('y')
 y1 = Symbol('y1')
 y2 = Symbol('y2')
 fun = vars(math)
+
 @app.route('/')
 def index():
     return '<h1>Bienvenido</h1>'
